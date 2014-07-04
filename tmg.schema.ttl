@@ -1,0 +1,2046 @@
+# baseURI: http://www.telegraph.co.uk/schema/
+
+@prefix : <http://www.telegraph.co.uk/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:AccessToken
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Token ;
+.
+:Account
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Intangible ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :credentials ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :currentCampaign ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :sourceCampaign ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :status ;
+    ] ;
+.
+:Action
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:ActiveProduct
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Product ;
+.
+:Activity
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Action ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :action ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :resource ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :token ;
+    ] ;
+.
+:Agent
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Application
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Agent ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :device ;
+    ] ;
+.
+:Article
+  rdf:type owl:Class ;
+  rdfs:comment "The canonical view of an article. You can see it as a collection of different type of Content." ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "Article" ;
+  rdfs:subClassOf :CreativeWork ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :activateDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :author ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :createdDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :expiryDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :headline ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :standfirst ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :state ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :copyright ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :customByline ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :customUrl ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :escenicId ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :forIPad ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :googleKeywords ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :icon ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :modifiedDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :publishedDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :standoutMetaTag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :statusChangeDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :trackingUrl ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :webtrendsEdcgParameter ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :windowTitle ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty :section ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty :tag ;
+    ] ;
+  vs:term_status "unstable" ;
+.
+:Author
+  rdf:type owl:Class ;
+  rdfs:comment "Author." ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "Author" ;
+  rdfs:subClassOf :Person ;
+  vs:term_status "unstable" ;
+.
+:BundledProduct
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Product ;
+.
+:Campaign
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+  owl:disjointUnionOf (
+      :DiscountCampaign
+      :NonDiscountCampaign
+    ) ;
+.
+:CampaignCode
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Intangible ;
+.
+:Catalogue
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Intangible ;
+.
+:CatalogueItem
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:ChecBoxPreference
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Preferences ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :flag ;
+    ] ;
+.
+:Collection
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Intangible ;
+.
+:ComplimentarySubscription
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Subscription ;
+.
+:CompositePriceSpecification
+  rdf:type owl:Class ;
+  rdfs:subClassOf :PriceSpecification ;
+.
+:CreativeWork
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Credential
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Intangible ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :account ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :authKey ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :authKeyInt ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :rememberMe ;
+    ] ;
+.
+:DELETE
+  rdf:type :Operation ;
+.
+:DebtCollection
+  rdf:type owl:Class ;
+  rdfs:subClassOf :PaidOrder ;
+.
+:Device
+  rdf:type owl:Class ;
+  rdfs:comment "Define different class name"^^xsd:string ;
+  rdfs:subClassOf :Agent ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :externalID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :geoLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :header ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :name ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :os ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :version ;
+    ] ;
+.
+:Discount
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:DiscountCampaign
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Campaign ;
+  owl:disjointWith :NonDiscountCampaign ;
+.
+:Entitlement
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :account ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :endDateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :isActive ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :startDateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :type ;
+    ] ;
+.
+:Event
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:FreeOrder
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Order ;
+.
+:FulfillmentAction
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:FulfillmentPlan
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Intangible ;
+.
+:GET
+  rdf:type :Operation ;
+.
+:Gallery
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Media ;
+.
+:Group
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Agent ;
+.
+:InactiveProduct
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Product ;
+.
+:Intangible
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+:MarketingPreferences
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Preferences ;
+.
+:Media
+  rdf:type owl:Class ;
+  rdfs:subClassOf :CreativeWork ;
+.
+:Membership
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Relationship ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :activationDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :group ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :role ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :status ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :user ;
+    ] ;
+.
+:MobileApp
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Application ;
+.
+:NonDiscountCampaign
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Campaign ;
+  owl:disjointWith :DiscountCampaign ;
+.
+:NotificationPreferences
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Preferences ;
+.
+:NotificationSubscription
+  rdf:type owl:Class ;
+  rdfs:subClassOf :ComplimentarySubscription ;
+.
+:OneOffPriceSpecification
+  rdf:type owl:Class ;
+  rdfs:subClassOf :PriceSpecification ;
+.
+:Operation
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Intangible ;
+.
+:Order
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:OrderItem
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Intangible ;
+.
+:Organization
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+:POST
+  rdf:type :Operation ;
+.
+:PUT
+  rdf:type :Operation ;
+.
+:PaidOrder
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Order ;
+.
+:PaidSubscription
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Subscription ;
+.
+:Payment
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:PermissionToken
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Token ;
+.
+:Person
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Agent ;
+.
+:Picture
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Media ;
+.
+:Place
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Preferences
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Intangible ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :description ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :name ;
+    ] ;
+.
+:PriceSpecification
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:Product
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#ProductOrServiceModel> ;
+  owl:disjointUnionOf (
+      :ActiveProduct
+      :InactiveProduct
+    ) ;
+.
+:Range
+  rdf:type owl:Class ;
+  rdfs:subClassOf :PriceSpecification ;
+.
+:RangedPriceSpecification
+  rdf:type owl:Class ;
+  rdfs:subClassOf :PriceSpecification ;
+.
+:RecurringOrder
+  rdf:type owl:Class ;
+  rdfs:subClassOf :PaidOrder ;
+.
+:RecurringPriceSpecification
+  rdf:type owl:Class ;
+  rdfs:subClassOf :PriceSpecification ;
+.
+:RefreshToken
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Token ;
+.
+:RefundOrder
+  rdf:type owl:Class ;
+  rdfs:subClassOf :PaidOrder ;
+.
+:Relationship
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:RenewalCampaign
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Campaign ;
+.
+:Section
+  rdf:type owl:Class ;
+  rdfs:comment "The canonical view of a section. A section is a list of Articles." ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "Section" ;
+  rdfs:subClassOf :Intangible ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :editorialOrder ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty :tag ;
+    ] ;
+  vs:term_status "unstable" ;
+.
+:Session
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :expiryDateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :rememberMe ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :secureSessionKey ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :sessionKey ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :sessionType ;
+    ] ;
+.
+:Source
+  rdf:type owl:Class ;
+  rdfs:comment "Source." ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "Source" ;
+  rdfs:subClassOf :Agent ;
+  vs:term_status "unstable" ;
+.
+:Story
+  rdf:type owl:Class ;
+  rdfs:subClassOf :CreativeWork ;
+.
+:Subscription
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+.
+:TabletApp
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Application ;
+.
+:TemporalThing
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+:ThirdPartyEntitlement
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Entitlement ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :partnerEndpoint ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :partnerEntitlementId ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :partnerId ;
+    ] ;
+.
+:Token
+  rdf:type owl:Class ;
+  rdfs:subClassOf :TemporalThing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :account ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :application ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :expiryDateTime ;
+    ] ;
+.
+:UsageEntitlement
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Entitlement ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :usageCount ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :usageLimit ;
+    ] ;
+.
+:User
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Person ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :phoneNumber ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :publicId ;
+    ] ;
+.
+:ValuePreference
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Preferences ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :value ;
+    ] ;
+.
+:Video
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Media ;
+.
+:WebApp
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Application ;
+.
+:account
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Credential
+          :Entitlement
+          :Token
+          :Person
+          :Group
+          :Order
+        ) ;
+    ] ;
+  rdfs:range :Account ;
+.
+:action
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Activity ;
+  rdfs:range xsd:string ;
+.
+:actionTerm
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :FulfillmentAction ;
+  rdfs:range xsd:string ;
+.
+:actionType
+  rdf:type owl:ObjectProperty ;
+.
+:activateDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf :start ;
+  vs:term_status "unstable" ;
+.
+:activationDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Membership ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf :start ;
+.
+:activationDateTime
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Membership ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf :start ;
+.
+:activity
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Token ;
+  rdfs:range :Activity ;
+.
+:application
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Device
+          :Token
+        ) ;
+    ] ;
+  rdfs:range :Application ;
+.
+:article
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "article: Section to Article." ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "has article" ;
+  rdfs:range :Article ;
+  vs:term_status "unstable" ;
+.
+:articles
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Section ;
+  rdfs:range :Collection ;
+.
+:authKey
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Credential ;
+  rdfs:range xsd:string ;
+.
+:authKeyInt
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Credential ;
+  rdfs:range xsd:string ;
+.
+:author
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "story: _ to Author." ;
+  rdfs:domain :CreativeWork ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "has author" ;
+  rdfs:range :Author ;
+  vs:term_status "unstable" ;
+.
+:beneficiary
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Account ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Person
+          :Group
+        ) ;
+    ] ;
+.
+:birthday
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:date ;
+.
+:blacklist
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Article ;
+  rdfs:range :Article ;
+  vs:term_status "unstable" ;
+.
+:body
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Story ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:campaign
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Order ;
+  rdfs:range :Campaign ;
+.
+:campaignName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Campaign ;
+  rdfs:range xsd:string ;
+.
+:caption
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Picture ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:catalogueItem
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range :CatalogueItem ;
+  owl:inverseOf :product ;
+.
+:childProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range :Product ;
+.
+:closeDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Campaign ;
+  rdfs:range xsd:date ;
+.
+:code
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Campaign ;
+  rdfs:range :CampaignCode ;
+.
+:codeString
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :CampaignCode ;
+  rdfs:range xsd:string ;
+.
+:codeUsed
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :CampaignCode ;
+  rdfs:range xsd:integer ;
+.
+:columnName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Gallery ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:commerceEvent
+  rdf:type owl:ObjectProperty ;
+.
+:componentPriceSpecification
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :CompositePriceSpecification ;
+  rdfs:range <http://purl.org/goodrelations/v1#PriceSpecification> ;
+.
+:contains
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Collection ;
+  rdfs:range rdfs:Resource ;
+.
+:copyright
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:core
+  rdf:type owl:AnnotationProperty ;
+  rdfs:comment "Annotates core properties for all ontologies" ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "core" ;
+  vs:term_status "unstable" ;
+.
+:createdDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :CreativeWork ;
+  rdfs:range xsd:dateTime ;
+  vs:term_status "unstable" ;
+.
+:credentials
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Account ;
+  rdfs:range :Credential ;
+.
+:crossSellOption
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range :CatalogueItem ;
+.
+:currentCampaign
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Account ;
+.
+:customByline
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Story ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:customUrl
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:defaultCatalogueItem
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range :CatalogueItem ;
+.
+:deliveryMedium
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+          "phone"
+          "tablet"
+          "desktop"
+        ) ;
+    ] ;
+  vs:term_status "unstable" ;
+.
+:description
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:device
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Account
+          :Application
+        ) ;
+    ] ;
+  rdfs:range :Device ;
+.
+:discount
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :DiscountCampaign ;
+  rdfs:range :Discount ;
+.
+:discountedPercentage
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Discount ;
+  rdfs:range xsd:decimal ;
+.
+:editorialOrder
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Section ;
+.
+:email
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+.
+:enableFinalFrame
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Gallery ;
+  rdfs:range xsd:boolean ;
+.
+:enableReverseOrder
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Gallery ;
+  rdfs:range xsd:boolean ;
+.
+:end
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :TemporalThing ;
+  rdfs:range rdfs:Literal ;
+.
+:endDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf :end ;
+.
+:endDateTime
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf :end ;
+.
+:entitelment
+  rdf:type owl:ObjectProperty ;
+  rdfs:range <identity:Entitlement> ;
+.
+:entitlement
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Account ;
+  rdfs:domain :FulfillmentAction ;
+  rdfs:range :Entitlement ;
+  rdfs:range <identity:Entitlement> ;
+.
+:escenicId
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  vs:term_status "unstable" ;
+.
+:escenicVersionid
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Article
+          :Picture
+        ) ;
+    ] ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:expiryDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf :end ;
+  vs:term_status "unstable" ;
+.
+:expiryDateTime
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf :end ;
+.
+:externalID
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Device ;
+  rdfs:range xsd:string ;
+.
+:first
+  rdf:type owl:ObjectProperty ;
+  rdfs:range rdfs:Resource ;
+.
+:firstname
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+.
+:flag
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ChecBoxPreference ;
+  rdfs:range xsd:boolean ;
+.
+:footballCompetition
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:footballMatch
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:forExistingSubscription
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Order ;
+  rdfs:range xsd:boolean ;
+.
+:forIPad
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:boolean ;
+  vs:term_status "unstable" ;
+.
+:frequency
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :RecurringPriceSpecification
+          :RangedPriceSpecification
+        ) ;
+    ] ;
+.
+:fulfilledProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :FulfillmentAction ;
+  rdfs:range :Product ;
+  owl:inverseOf :fulfillmentRule ;
+.
+:fulfillmentAction
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :FulfillmentPlan ;
+  rdfs:range :FulfillmentAction ;
+.
+:fulfillmentPlan
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Order ;
+  rdfs:range :FulfillmentPlan ;
+.
+:fulfillmentRule
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Product ;
+.
+:gallery
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Article ;
+  rdfs:range :Gallery ;
+.
+:gender
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+.
+:geoLocation
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Device ;
+  rdfs:range :Place ;
+.
+:googleKeywords
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:grossAmount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Payment ;
+  rdfs:range xsd:decimal ;
+.
+:group
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Membership ;
+  rdfs:range :Group ;
+.
+:header
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Device ;
+  rdfs:range xsd:string ;
+.
+:headline
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "headline: _ to String." ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "has headline" ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:height
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Media ;
+  rdfs:range xsd:integer ;
+  vs:term_status "unstable" ;
+.
+:icon
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:imageName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Picture ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:interest
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:range rdfs:Resource ;
+.
+:isActive
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Entitlement ;
+  rdfs:range xsd:boolean ;
+.
+:item
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Campaign
+          :OrderItem
+        ) ;
+    ] ;
+  rdfs:range :CatalogueItem ;
+.
+:knows
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:range :Person ;
+.
+:last
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Collection ;
+  rdfs:range rdfs:Resource ;
+.
+:lastname
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+.
+:launchDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Campaign ;
+  rdfs:range xsd:date ;
+.
+:location
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Story ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:longDescription
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Product ;
+  rdfs:range xsd:string ;
+.
+:lowerLimit
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:decimal ;
+.
+:made
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:range rdfs:Resource ;
+.
+:maxRedemptionPerUser
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Campaign ;
+  rdfs:range xsd:integer ;
+.
+:membership
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :User
+          :Group
+        ) ;
+    ] ;
+  rdfs:range :Membership ;
+.
+:method
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Operation ;
+  rdfs:range xsd:string ;
+.
+:mobileItem
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
+.
+:modifiedDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:dateTime ;
+  vs:term_status "unstable" ;
+.
+:name
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:range xsd:string ;
+.
+:netAmount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Payment ;
+  rdfs:range xsd:decimal ;
+.
+:newsSpeed
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Article ;
+  rdfs:range :Source ;
+  vs:term_status "unstable" ;
+.
+:next
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Collection ;
+  rdfs:range rdfs:Resource ;
+.
+:nextAction
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :FulfillmentAction ;
+  rdfs:range :FulfillmentAction ;
+.
+:nextSubscription
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Subscription ;
+  rdfs:range :Subscription ;
+.
+:numberOfRecurrences
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :RecurringPriceSpecification
+          :RangedPriceSpecification
+        ) ;
+    ] ;
+  rdfs:range xsd:integer ;
+.
+:offlineItem
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
+.
+:offsetPeriod
+  rdf:type owl:ObjectProperty ;
+  rdfs:range <http://reference.data.gov.uk/def/intervals/Interval> ;
+.
+:onlineItem
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
+.
+:ooyalaEmbedCode
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:ooyalaInSkin
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:boolean ;
+  vs:term_status "unstable" ;
+.
+:ooyalaLatestLabel
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:ooyalaLoop
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:boolean ;
+  vs:term_status "unstable" ;
+.
+:ooyalaMigratedDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:dateTime ;
+  vs:term_status "unstable" ;
+.
+:ooyalaPlayerType
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:ooyalaQuickTv
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:boolean ;
+  vs:term_status "unstable" ;
+.
+:ooyalaSensitiveVideo
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:boolean ;
+  vs:term_status "unstable" ;
+.
+:ooyalaVolume
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:openId
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+.
+:operation
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Collection ;
+  rdfs:range :Operation ;
+.
+:order
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Account ;
+  rdfs:range :Order ;
+.
+:orderItem
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Order ;
+  rdfs:range :OrderItem ;
+.
+:originalPayment
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Payment ;
+  rdfs:range :Payment ;
+.
+:originatingOrder
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Subscription ;
+  rdfs:range :Order ;
+.
+:os
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Device ;
+  rdfs:range xsd:string ;
+.
+:outstandingBalance
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :PaidSubscription ;
+  rdfs:range xsd:decimal ;
+.
+:outstandingBalanceToCustomer
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :PaidSubscription ;
+  rdfs:range xsd:decimal ;
+.
+:partnerEndpoint
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ThirdPartyEntitlement ;
+  rdfs:range xsd:string ;
+.
+:partnerEntitlementId
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ThirdPartyEntitlement ;
+  rdfs:range xsd:string ;
+.
+:partnerId
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ThirdPartyEntitlement ;
+  rdfs:range xsd:string ;
+.
+:payment
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :PaidOrder ;
+  rdfs:range :Payment ;
+.
+:paymentDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Payment ;
+  rdfs:range xsd:dateTime ;
+.
+:paymentForOrder
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Payment ;
+  rdfs:range :PaidOrder ;
+.
+:paymentMethod
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Payment ;
+  rdfs:range <http://purl.org/goodrelations/v1#PaymentMethod> ;
+.
+:phoneNumber
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+.
+:picture
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Article ;
+  rdfs:range :Picture ;
+.
+:preferences
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Account
+          :Device
+        ) ;
+    ] ;
+  rdfs:range :Preferences ;
+.
+:prev
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Collection ;
+  rdfs:range rdfs:Resource ;
+.
+:prevSubscription
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Subscription ;
+  rdfs:range :Subscription ;
+.
+:previousAction
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :FulfillmentAction ;
+  rdfs:range :FulfillmentAction ;
+.
+:priceAmount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:decimal ;
+.
+:priceCurrency
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+:product
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf <http://purl.org/goodrelations/v1#includes> ;
+.
+:pspPlanId
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :RecurringOrder
+          :Payment
+        ) ;
+    ] ;
+  rdfs:range xsd:string ;
+.
+:publicId
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :User ;
+  rdfs:range xsd:string ;
+.
+:publishedDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:dateTime ;
+  vs:term_status "unstable" ;
+.
+:pullquote
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Story ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:pullquoteSource
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Story ;
+  rdfs:range :Source ;
+  vs:term_status "unstable" ;
+.
+:range
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :RangedPriceSpecification ;
+  rdfs:range :Range ;
+.
+:recurring
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :PaidOrder ;
+  rdfs:range xsd:boolean ;
+.
+:relatedArticle
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "relatedArticle: Article to Article." ;
+  rdfs:domain :Article ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "article of" ;
+  rdfs:range :Article ;
+  vs:term_status "unstable" ;
+.
+:relatedMedia
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range <http://www.telegraph.co.uk/ontology/content/Article> ;
+.
+:relatedVideoHeader
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:rememberMe
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Credential
+          :Session
+        ) ;
+    ] ;
+  rdfs:range xsd:boolean ;
+.
+:renewalDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :PaidSubscription ;
+  rdfs:range xsd:dateTime ;
+.
+:resource
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Activity ;
+  rdfs:range xsd:string ;
+.
+:rest
+  rdf:type owl:ObjectProperty ;
+.
+:returns
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Operation ;
+  rdfs:range rdfs:Resource ;
+.
+:role
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Membership ;
+  rdfs:range xsd:string ;
+.
+:section
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "section: Article to Section." ;
+  rdfs:domain :Article ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "has section" ;
+  rdfs:range :Section ;
+  owl:inverseOf :article ;
+  vs:term_status "unstable" ;
+.
+:secureSessionKey
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Session ;
+  rdfs:range xsd:string ;
+.
+:selectedPriceSpecification
+  rdf:type owl:ObjectProperty ;
+  rdfs:range <http://purl.org/goodrelations/v1#PriceSpecification> ;
+.
+:sequenceOrder
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :RangedPriceSpecification
+          :RecurringPriceSpecification
+        ) ;
+    ] ;
+  rdfs:range xsd:integer ;
+.
+:session
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Token ;
+  rdfs:range :Session ;
+.
+:sessionKey
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Session ;
+  rdfs:range xsd:string ;
+.
+:sessionType
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Session ;
+  rdfs:range xsd:string ;
+.
+:slideShowRotation
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Gallery ;
+  rdfs:range xsd:boolean ;
+.
+:slideshowRotation
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:source
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "source: _ to Source." ;
+  rdfs:label "has source" ;
+  rdfs:range :Source ;
+  vs:term_status "unstable" ;
+.
+:sourceCampaign
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Account ;
+  rdfs:range :Campaign ;
+.
+:standfirst
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "standfirst: _ to String." ;
+  rdfs:domain :Story ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "has standfirst" ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:standoutMetaTag
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:start
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :TemporalThing ;
+  rdfs:range rdfs:Literal ;
+.
+:startDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Subscription
+          :FulfillmentAction
+        ) ;
+    ] ;
+  rdfs:range xsd:date ;
+  rdfs:subPropertyOf :start ;
+.
+:startDateTime
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Entitlement ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf :start ;
+.
+:state
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+          "published"
+          "unpublished"
+        ) ;
+    ] ;
+  rdfs:subPropertyOf :status ;
+  vs:term_status "unstable" ;
+.
+:statistics
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "statistics: Article to Statistic." ;
+  rdfs:domain :Article ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "has statistics" ;
+  rdfs:range qb:Dataset ;
+  vs:term_status "unstable" ;
+.
+:status
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:range xsd:string ;
+.
+:statusChangeDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:dateTime ;
+  vs:term_status "unstable" ;
+.
+:story
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Article ;
+  rdfs:range :Story ;
+.
+:storyNotes
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Story ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:subscribedProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Subscription ;
+  rdfs:range :OrderItem ;
+.
+:subscriber
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Subscription ;
+  rdfs:range <identity:Account> ;
+.
+:subscription
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Account ;
+  rdfs:domain :Order ;
+  rdfs:range <commerce:Subscription> ;
+  rdfs:range :Subscription ;
+.
+:subscriptionNumber
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Subscription ;
+  rdfs:range xsd:integer ;
+.
+:subscriptionStatus
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Subscription ;
+  rdfs:range xsd:string ;
+.
+:subscriptionTerm
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Subscription ;
+  rdfs:range xsd:string ;
+.
+:subsections
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Section ;
+  rdfs:range :Collection ;
+.
+:subsequentOrder
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Subscription ;
+  rdfs:range :Order ;
+.
+:syndication
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:boolean ;
+  vs:term_status "unstable" ;
+.
+:tag
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Section
+          :Article
+        ) ;
+    ] ;
+  rdfs:range xsd:string ;
+.
+:target
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Campaign ;
+  rdfs:range <foaf:Person> ;
+.
+:timeOffsetIsPositive
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:boolean ;
+.
+:title
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+.
+:tmgId
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Telegraph Canonical ID" ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "Canonical ID" ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:token
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Application
+          :Activity
+        ) ;
+    ] ;
+  rdfs:range :Token ;
+.
+:totalPrice
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :PaidSubscription ;
+  rdfs:range xsd:decimal ;
+.
+:trackingUrl
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Article ;
+  rdfs:range rdfs:Resource ;
+  vs:term_status "unstable" ;
+.
+:type
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Entitlement
+          :Account
+        ) ;
+    ] ;
+  rdfs:range xsd:string ;
+.
+:unit
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :RangedPriceSpecification ;
+.
+:upgradeOption
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range :CatalogueItem ;
+.
+:uploadedFilename
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Picture ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:upperLimit
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:decimal ;
+.
+:url
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The URL of a generic resource" ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:isDefinedBy : ;
+  rdfs:label "has URL" ;
+  vs:term_status "unstable" ;
+.
+:usageCount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :UsageEntitlement ;
+  rdfs:range xsd:integer ;
+.
+:usageLimit
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :UsageEntitlement ;
+  rdfs:range xsd:integer ;
+.
+:user
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Membership ;
+  rdfs:range :User ;
+.
+:value
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ValuePreference ;
+  rdfs:range rdfs:Literal ;
+.
+:vatAmount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Payment ;
+  rdfs:range xsd:decimal ;
+.
+:version
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Device ;
+  rdfs:range xsd:string ;
+.
+:video
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Article ;
+.
+:videoExternalCode
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:videoSupplier
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:weblog
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:range :CreativeWork ;
+.
+:webtrendsEdcgParameter
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+:width
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Media ;
+  rdfs:range xsd:integer ;
+  vs:term_status "unstable" ;
+.
+:windowTitle
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
+  rdfs:range xsd:string ;
+  vs:term_status "unstable" ;
+.
+rdfs:Resource
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :tmgId ;
+    ] ;
+.
+<http://xmlns.com/foaf/0.1/Agent>
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty <http://xmlns.com/foaf/0.1/status> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty <http://xmlns.com/foaf/0.1/birthday> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty <http://xmlns.com/foaf/0.1/gender> ;
+    ] ;
+.
+<http://xmlns.com/foaf/0.1/OnlineAccount>
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :beneficiary ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty <http://xmlns.com/foaf/0.1/accountName> ;
+    ] ;
+.
+<http://xmlns.com/foaf/0.1/Person>
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty <http://xmlns.com/foaf/0.1/firstName> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty <http://xmlns.com/foaf/0.1/lastName> ;
+    ] ;
+.
+<http://xmlns.com/foaf/0.1/weblog>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+  rdfs:range <http://xmlns.com/foaf/0.1/Document> ;
+.
