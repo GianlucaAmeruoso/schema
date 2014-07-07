@@ -19,26 +19,6 @@
 :Account
   rdf:type owl:Class ;
   rdfs:subClassOf :Intangible ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :credentials ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :currentCampaign ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :sourceCampaign ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :status ;
-    ] ;
 .
 :Action
   rdf:type owl:Class ;
@@ -46,26 +26,11 @@
 .
 :ActiveProduct
   rdf:type owl:Class ;
-  rdfs:subClassOf :Product ;
+  rdfs:subClassOf :ECommerceProduct ;
 .
 :Activity
   rdf:type owl:Class ;
   rdfs:subClassOf :Action ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :action ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :resource ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :token ;
-    ] ;
 .
 :Agent
   rdf:type owl:Class ;
@@ -74,11 +39,6 @@
 :Application
   rdf:type owl:Class ;
   rdfs:subClassOf :Agent ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :device ;
-    ] ;
 .
 :Article
   rdf:type owl:Class ;
@@ -86,121 +46,7 @@
   rdfs:isDefinedBy : ;
   rdfs:label "Article" ;
   rdfs:subClassOf :CreativeWork ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :activateDate ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :author ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :createdDate ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :expiryDate ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :headline ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :standfirst ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :state ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :copyright ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :customByline ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :customUrl ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :escenicId ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :forIPad ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :googleKeywords ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :icon ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :modifiedDate ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :publishedDate ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :standoutMetaTag ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :statusChangeDate ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :trackingUrl ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :webtrendsEdcgParameter ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :windowTitle ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality 1 ;
-      owl:onProperty :section ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality 1 ;
-      owl:onProperty :tag ;
-    ] ;
+  rdfs:subClassOf :TemporalThing ;
   vs:term_status "unstable" ;
 .
 :Author
@@ -213,7 +59,7 @@
 .
 :BundledProduct
   rdf:type owl:Class ;
-  rdfs:subClassOf :Product ;
+  rdfs:subClassOf :ECommerceProduct ;
 .
 :Campaign
   rdf:type owl:Class ;
@@ -238,11 +84,6 @@
 :ChecBoxPreference
   rdf:type owl:Class ;
   rdfs:subClassOf :Preferences ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :flag ;
-    ] ;
 .
 :Collection
   rdf:type owl:Class ;
@@ -263,26 +104,6 @@
 :Credential
   rdf:type owl:Class ;
   rdfs:subClassOf :Intangible ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :account ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :authKey ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :authKeyInt ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :rememberMe ;
-    ] ;
 .
 :DELETE
   rdf:type :Operation ;
@@ -295,36 +116,7 @@
   rdf:type owl:Class ;
   rdfs:comment "Define different class name"^^xsd:string ;
   rdfs:subClassOf :Agent ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :externalID ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :geoLocation ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :header ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :name ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :os ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :version ;
-    ] ;
+  rdfs:subClassOf :Object ;
 .
 :Discount
   rdf:type owl:Class ;
@@ -335,34 +127,17 @@
   rdfs:subClassOf :Campaign ;
   owl:disjointWith :NonDiscountCampaign ;
 .
+:ECommerceProduct
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Product ;
+  owl:disjointUnionOf (
+      :ActiveProduct
+      :InactiveProduct
+    ) ;
+.
 :Entitlement
   rdf:type owl:Class ;
   rdfs:subClassOf :TemporalThing ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :account ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :endDateTime ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :isActive ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :startDateTime ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :type ;
-    ] ;
 .
 :Event
   rdf:type owl:Class ;
@@ -393,7 +168,7 @@
 .
 :InactiveProduct
   rdf:type owl:Class ;
-  rdfs:subClassOf :Product ;
+  rdfs:subClassOf :ECommerceProduct ;
 .
 :Intangible
   rdf:type owl:Class ;
@@ -410,31 +185,6 @@
 :Membership
   rdf:type owl:Class ;
   rdfs:subClassOf :Relationship ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :activationDate ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :group ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :role ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :status ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :user ;
-    ] ;
 .
 :MobileApp
   rdf:type owl:Class ;
@@ -452,6 +202,10 @@
 :NotificationSubscription
   rdf:type owl:Class ;
   rdfs:subClassOf :ComplimentarySubscription ;
+.
+:Object
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
 .
 :OneOffPriceSpecification
   rdf:type owl:Class ;
@@ -471,7 +225,7 @@
 .
 :Organization
   rdf:type owl:Class ;
-  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf :Agent ;
 .
 :POST
   rdf:type :Operation ;
@@ -510,16 +264,7 @@
 :Preferences
   rdf:type owl:Class ;
   rdfs:subClassOf :Intangible ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :description ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :name ;
-    ] ;
+  rdfs:subClassOf :TemporalThing ;
 .
 :PriceSpecification
   rdf:type owl:Class ;
@@ -527,15 +272,7 @@
 .
 :Product
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://purl.org/goodrelations/v1#ProductOrServiceModel> ;
-  owl:disjointUnionOf (
-      :ActiveProduct
-      :InactiveProduct
-    ) ;
-.
-:Range
-  rdf:type owl:Class ;
-  rdfs:subClassOf :PriceSpecification ;
+  rdfs:subClassOf owl:Thing ;
 .
 :RangedPriceSpecification
   rdf:type owl:Class ;
@@ -571,46 +308,11 @@
   rdfs:isDefinedBy : ;
   rdfs:label "Section" ;
   rdfs:subClassOf :Intangible ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :editorialOrder ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality 1 ;
-      owl:onProperty :tag ;
-    ] ;
   vs:term_status "unstable" ;
 .
 :Session
   rdf:type owl:Class ;
   rdfs:subClassOf :TemporalThing ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :expiryDateTime ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :rememberMe ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :secureSessionKey ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :sessionKey ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :sessionType ;
-    ] ;
 .
 :Source
   rdf:type owl:Class ;
@@ -639,77 +341,22 @@
 :ThirdPartyEntitlement
   rdf:type owl:Class ;
   rdfs:subClassOf :Entitlement ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :partnerEndpoint ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :partnerEntitlementId ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :partnerId ;
-    ] ;
 .
 :Token
   rdf:type owl:Class ;
   rdfs:subClassOf :TemporalThing ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :account ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :application ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :expiryDateTime ;
-    ] ;
 .
 :UsageEntitlement
   rdf:type owl:Class ;
   rdfs:subClassOf :Entitlement ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :usageCount ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :usageLimit ;
-    ] ;
 .
 :User
   rdf:type owl:Class ;
   rdfs:subClassOf :Person ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :phoneNumber ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :publicId ;
-    ] ;
 .
 :ValuePreference
   rdf:type owl:Class ;
   rdfs:subClassOf :Preferences ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :value ;
-    ] ;
 .
 :Video
   rdf:type owl:Class ;
@@ -756,13 +403,11 @@
 .
 :activationDate
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain :Membership ;
   rdfs:range xsd:date ;
   rdfs:subPropertyOf :start ;
 .
 :activationDateTime
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain :Membership ;
   rdfs:range xsd:dateTime ;
   rdfs:subPropertyOf :start ;
 .
@@ -770,6 +415,11 @@
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Token ;
   rdfs:range :Activity ;
+.
+:amount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :OneOffPriceSpecification ;
+  rdfs:range xsd:decimal ;
 .
 :application
   rdf:type owl:ObjectProperty ;
@@ -861,14 +511,14 @@
 .
 :catalogueItem
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Product ;
+  rdfs:domain :ECommerceProduct ;
   rdfs:range :CatalogueItem ;
   owl:inverseOf :product ;
 .
 :childProduct
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Product ;
-  rdfs:range :Product ;
+  rdfs:domain :ECommerceProduct ;
+  rdfs:range :ECommerceProduct ;
 .
 :closeDate
   rdf:type owl:DatatypeProperty ;
@@ -902,7 +552,7 @@
 :componentPriceSpecification
   rdf:type owl:ObjectProperty ;
   rdfs:domain :CompositePriceSpecification ;
-  rdfs:range <http://purl.org/goodrelations/v1#PriceSpecification> ;
+  rdfs:range :PriceSpecification ;
 .
 :contains
   rdf:type owl:ObjectProperty ;
@@ -911,6 +561,7 @@
 .
 :copyright
   rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
   rdfs:range xsd:string ;
   vs:term_status "unstable" ;
 .
@@ -934,8 +585,13 @@
 .
 :crossSellOption
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Product ;
+  rdfs:domain :ECommerceProduct ;
   rdfs:range :CatalogueItem ;
+.
+:currency
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :PriceSpecification ;
+  rdfs:range xsd:string ;
 .
 :currentCampaign
   rdf:type owl:ObjectProperty ;
@@ -943,7 +599,13 @@
 .
 :customByline
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain :Story ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Story
+          :Article
+        ) ;
+    ] ;
   rdfs:range xsd:string ;
   vs:term_status "unstable" ;
 .
@@ -955,7 +617,7 @@
 .
 :defaultCatalogueItem
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Product ;
+  rdfs:domain :ECommerceProduct ;
   rdfs:range :CatalogueItem ;
 .
 :deliveryMedium
@@ -1041,10 +703,10 @@
   rdfs:domain :Account ;
   rdfs:domain :FulfillmentAction ;
   rdfs:range :Entitlement ;
-  rdfs:range <identity:Entitlement> ;
 .
 :escenicId
   rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Article ;
   rdfs:range xsd:integer ;
   vs:term_status "unstable" ;
 .
@@ -1126,8 +788,7 @@
 :fulfilledProduct
   rdf:type owl:ObjectProperty ;
   rdfs:domain :FulfillmentAction ;
-  rdfs:range :Product ;
-  owl:inverseOf :fulfillmentRule ;
+  rdfs:range :ECommerceProduct ;
 .
 :fulfillmentAction
   rdf:type owl:ObjectProperty ;
@@ -1138,10 +799,6 @@
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Order ;
   rdfs:range :FulfillmentPlan ;
-.
-:fulfillmentRule
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain :Product ;
 .
 :gallery
   rdf:type owl:ObjectProperty ;
@@ -1174,6 +831,11 @@
   rdfs:domain :Membership ;
   rdfs:range :Group ;
 .
+:happensAt
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :TemporalThing ;
+  rdfs:range rdfs:Literal ;
+.
 :header
   rdf:type owl:DatatypeProperty ;
   rdfs:domain :Device ;
@@ -1182,6 +844,13 @@
 :headline
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "headline: _ to String." ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Article
+          :Story
+        ) ;
+    ] ;
   rdfs:isDefinedBy : ;
   rdfs:label "has headline" ;
   rdfs:range xsd:string ;
@@ -1254,7 +923,7 @@
 .
 :longDescription
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain :Product ;
+  rdfs:domain :ECommerceProduct ;
   rdfs:range xsd:string ;
 .
 :lowerLimit
@@ -1265,6 +934,11 @@
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Person ;
   rdfs:range rdfs:Resource ;
+.
+:maxAmount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :PriceSpecification ;
+  rdfs:range xsd:decimal ;
 .
 :maxRedemptionPerUser
   rdf:type owl:DatatypeProperty ;
@@ -1287,13 +961,18 @@
   rdfs:domain :Operation ;
   rdfs:range xsd:string ;
 .
+:minAmount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :PriceSpecification ;
+  rdfs:range xsd:decimal ;
+.
 :mobileItem
   rdf:type owl:ObjectProperty ;
   rdfs:subPropertyOf <http://purl.org/goodrelations/v1#offers> ;
 .
 :modifiedDate
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain :Article ;
+  rdfs:domain :CreativeWork ;
   rdfs:range xsd:dateTime ;
   vs:term_status "unstable" ;
 .
@@ -1338,6 +1017,11 @@
         ) ;
     ] ;
   rdfs:range xsd:integer ;
+.
+:offers
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Catalogue ;
+  rdfs:range :CatalogueItem ;
 .
 :offlineItem
   rdf:type owl:ObjectProperty ;
@@ -1483,7 +1167,6 @@
 :paymentMethod
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Payment ;
-  rdfs:range <http://purl.org/goodrelations/v1#PaymentMethod> ;
 .
 :phoneNumber
   rdf:type owl:DatatypeProperty ;
@@ -1529,6 +1212,11 @@
   rdf:type owl:DatatypeProperty ;
   rdfs:range xsd:string ;
 .
+:priceSpecification
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :CatalogueItem ;
+  rdfs:range :PriceSpecification ;
+.
 :product
   rdf:type owl:ObjectProperty ;
   rdfs:subPropertyOf <http://purl.org/goodrelations/v1#includes> ;
@@ -1551,7 +1239,7 @@
 .
 :publishedDate
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain :Article ;
+  rdfs:domain :CreativeWork ;
   rdfs:range xsd:dateTime ;
   vs:term_status "unstable" ;
 .
@@ -1570,7 +1258,7 @@
 :range
   rdf:type owl:ObjectProperty ;
   rdfs:domain :RangedPriceSpecification ;
-  rdfs:range :Range ;
+  rdfs:range :OneOffPriceSpecification ;
 .
 :recurring
   rdf:type owl:DatatypeProperty ;
@@ -1588,8 +1276,8 @@
 .
 :relatedMedia
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Product ;
-  rdfs:range <http://www.telegraph.co.uk/ontology/content/Article> ;
+  rdfs:domain :ECommerceProduct ;
+  rdfs:range :CreativeWork ;
 .
 :relatedVideoHeader
   rdf:type owl:DatatypeProperty ;
@@ -1661,6 +1349,11 @@
     ] ;
   rdfs:range xsd:integer ;
 .
+:serialNumber
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :CatalogueItem ;
+  rdfs:range xsd:string ;
+.
 :session
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Token ;
@@ -1674,6 +1367,11 @@
 :sessionType
   rdf:type owl:DatatypeProperty ;
   rdfs:domain :Session ;
+  rdfs:range xsd:string ;
+.
+:sku
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :CatalogueItem ;
   rdfs:range xsd:string ;
 .
 :slideShowRotation
@@ -1701,7 +1399,13 @@
 :standfirst
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "standfirst: _ to String." ;
-  rdfs:domain :Story ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Story
+          :Article
+        ) ;
+    ] ;
   rdfs:isDefinedBy : ;
   rdfs:label "has standfirst" ;
   rdfs:range xsd:string ;
@@ -1720,19 +1424,11 @@
 .
 :startDate
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain [
-      rdf:type owl:Class ;
-      owl:unionOf (
-          :Subscription
-          :FulfillmentAction
-        ) ;
-    ] ;
   rdfs:range xsd:date ;
   rdfs:subPropertyOf :start ;
 .
 :startDateTime
   rdf:type owl:DatatypeProperty ;
-  rdfs:domain :Entitlement ;
   rdfs:range xsd:dateTime ;
   rdfs:subPropertyOf :start ;
 .
@@ -1788,7 +1484,7 @@
 :subscriber
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Subscription ;
-  rdfs:range <identity:Account> ;
+  rdfs:range :Account ;
 .
 :subscription
   rdf:type owl:ObjectProperty ;
@@ -1842,7 +1538,7 @@
 :target
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Campaign ;
-  rdfs:range <foaf:Person> ;
+  rdfs:range :Person ;
 .
 :timeOffsetIsPositive
   rdf:type owl:DatatypeProperty ;
@@ -1901,7 +1597,7 @@
 .
 :upgradeOption
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Product ;
+  rdfs:domain :ECommerceProduct ;
   rdfs:range :CatalogueItem ;
 .
 :uploadedFilename
@@ -1990,13 +1686,6 @@
   rdfs:domain :Article ;
   rdfs:range xsd:string ;
   vs:term_status "unstable" ;
-.
-rdfs:Resource
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :tmgId ;
-    ] ;
 .
 <http://xmlns.com/foaf/0.1/Agent>
   rdfs:subClassOf [
